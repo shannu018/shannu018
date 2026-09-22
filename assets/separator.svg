@@ -1,0 +1,14 @@
+<svg width="1000" height="24" viewBox="0 0 1000 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0" />
+      <stop offset="20%" stop-color="#00F0FF" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#A855F7" stop-opacity="1" />
+      <stop offset="80%" stop-color="#F59E0B" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#F43F5E" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <line x1="0" y1="12" x2="1000" y2="12" stroke="url(#sepGrad)" stroke-width="2" />
+  <circle cx="500" cy="12" r="4" fill="#A855F7" />
+  <circle cx="500" cy="12" r="8" fill="none" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" />
+</svg>

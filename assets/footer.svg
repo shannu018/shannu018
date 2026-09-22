@@ -1,0 +1,57 @@
+<svg width="1200" height="180" viewBox="0 0 1200 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600;700&amp;family=Inter:wght@800;900&amp;display=swap');
+
+      .footer-bg { fill: #030712; stroke: #1E293B; stroke-width: 1.5; rx: 10; }
+      
+      .f-title {
+        font-family: 'Inter', sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: 8px;
+        fill: #FFFFFF;
+        text-anchor: middle;
+      }
+      .f-sub {
+        font-family: 'Fira Code', monospace;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        text-anchor: middle;
+      }
+
+      .pulse-dot {
+        animation: dotGlow 2s infinite alternate;
+      }
+      @keyframes dotGlow {
+        0% { opacity: 0.4; }
+        100% { opacity: 1; }
+      }
+    </style>
+    <linearGradient id="f-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="33%" stop-color="#A855F7" />
+      <stop offset="66%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#F43F5E" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="180" class="footer-bg" />
+
+  <g transform="translate(600, 75)">
+    <text y="0" class="f-title">BUILD THE FUTURE WITH AUTONOMOUS INTELLIGENCE.</text>
+    <text y="40" class="f-sub">
+      <tspan fill="#00F0FF">SEE</tspan>
+      <tspan fill="#475569">  &#8226;  </tspan>
+      <tspan fill="#A855F7">REASON</tspan>
+      <tspan fill="#475569">  &#8226;  </tspan>
+      <tspan fill="#F59E0B">BUILD</tspan>
+      <tspan fill="#475569">  &#8226;  </tspan>
+      <tspan fill="#F43F5E">SCALE</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom Line -->
+  <rect x="20" y="165" width="1160" height="3" rx="1.5" fill="url(#f-grad)" />
+</svg>

@@ -1,0 +1,88 @@
+<svg width="760" height="260" viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap');
+
+      .box-supervisor { fill: #0F172A; stroke: #00F0FF; stroke-width: 2; rx: 8; }
+      .box-worker { fill: #0F172A; stroke: #A855F7; stroke-width: 1.5; rx: 8; }
+      .box-memory { fill: #0F172A; stroke: #F59E0B; stroke-width: 1.5; rx: 8; }
+      
+      .label-title { font-family: 'Fira Code', monospace; font-size: 13px; font-weight: 700; text-anchor: middle; }
+      .label-sub { font-family: 'Inter', sans-serif; font-size: 11px; fill: #94A3B8; text-anchor: middle; }
+
+      .flow-line { fill: none; stroke-width: 1.5; stroke-dasharray: 6 6; animation: dashFlow 4s infinite linear; }
+      .line-cyan { stroke: #00F0FF; }
+      .line-purple { stroke: #A855F7; }
+      .line-gold { stroke: #F59E0B; }
+
+      @keyframes dashFlow {
+        to { stroke-dashoffset: -24; }
+      }
+    </style>
+  </defs>
+
+  <rect width="760" height="260" fill="#030712" rx="10" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Diagram Title -->
+  <text x="380" y="28" font-family="'Fira Code', monospace" font-size="12" font-weight="700" fill="#64748B" text-anchor="middle">
+    ARCHITECTURE // MULTI-AGENT REASONING &amp; MEMORY BUS
+  </text>
+
+  <!-- Input Query Node (x=40, y=120) -->
+  <rect x="30" y="95" width="110" height="50" fill="#0F172A" stroke="#38BDF8" stroke-width="1.5" rx="8" />
+  <text x="85" y="118" class="label-title" fill="#38BDF8">USER INPUT</text>
+  <text x="85" y="133" class="label-sub">Task / Prompt</text>
+
+  <!-- Flow line from Input to Supervisor -->
+  <path d="M 140 120 L 190 120" class="flow-line line-cyan" />
+
+  <!-- Supervisor Agent Node (x=200, y=80, w=150, h=80) -->
+  <rect x="190" y="80" width="150" height="80" class="box-supervisor" />
+  <text x="265" y="110" class="label-title" fill="#00F0FF">SUPERVISOR</text>
+  <text x="265" y="128" class="label-sub">ReAct Planner</text>
+  <text x="265" y="143" class="label-sub">Task Decomposition</text>
+
+  <!-- Flow lines from Supervisor to Workers -->
+  <path d="M 340 100 L 410 65" class="flow-line line-purple" />
+  <path d="M 340 120 L 410 120" class="flow-line line-purple" />
+  <path d="M 340 140 L 410 175" class="flow-line line-purple" />
+
+  <!-- Worker Agent Nodes -->
+  <!-- Worker 1: Search & Web -->
+  <rect x="410" y="45" width="140" height="42" class="box-worker" />
+  <text x="480" y="64" class="label-title" fill="#A855F7">RESEARCH</text>
+  <text x="480" y="77" class="label-sub">Web &amp; API Search</text>
+
+  <!-- Worker 2: Code & Exec -->
+  <rect x="410" y="100" width="140" height="42" class="box-worker" />
+  <text x="480" y="119" class="label-title" fill="#A855F7">EXECUTION</text>
+  <text x="480" y="132" class="label-sub">Code &amp; Tools</text>
+
+  <!-- Worker 3: Validation -->
+  <rect x="410" y="155" width="140" height="42" class="box-worker" />
+  <text x="480" y="174" class="label-title" fill="#A855F7">VERIFIER</text>
+  <text x="480" y="187" class="label-sub">Self-Correction</text>
+
+  <!-- Flow lines to Memory Bus -->
+  <path d="M 550 65 L 610 100" class="flow-line line-gold" />
+  <path d="M 550 120 L 610 120" class="flow-line line-gold" />
+  <path d="M 550 175 L 610 140" class="flow-line line-gold" />
+
+  <!-- Shared Memory Bus Node (x=610, y=80, w=120, h=80) -->
+  <rect x="610" y="80" width="120" height="80" class="box-memory" />
+  <text x="670" y="110" class="label-title" fill="#F59E0B">MEMOPS BUS</text>
+  <text x="670" y="128" class="label-sub">pgvector Store</text>
+  <text x="670" y="143" class="label-sub">Shared Context</text>
+
+  <!-- Bottom Legend -->
+  <g transform="translate(140, 228)">
+    <circle cx="0" cy="0" r="4" fill="#00F0FF" />
+    <text x="12" y="4" font-family="'Inter', sans-serif" font-size="11" fill="#94A3B8">Planning</text>
+
+    <circle cx="120" cy="0" r="4" fill="#A855F7" />
+    <text x="132" y="4" font-family="'Inter', sans-serif" font-size="11" fill="#94A3B8">Execution</text>
+
+    <circle cx="240" cy="0" r="4" fill="#F59E0B" />
+    <text x="252" y="4" font-family="'Inter', sans-serif" font-size="11" fill="#94A3B8">Vector Memory</text>
+  </g>
+</svg>

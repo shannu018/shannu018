@@ -1,0 +1,269 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&amp;family=Inter:wght@300;400;700;900&amp;display=swap');
+
+      .bg-particle {
+        animation: floatParticle 10s infinite linear;
+      }
+      .bg-particle:nth-child(2n) { animation-duration: 14s; animation-direction: reverse; }
+      .bg-particle:nth-child(3n) { animation-duration: 12s; animation-delay: 2s; }
+      
+      @keyframes floatParticle {
+        0% { transform: translate(0, 0); opacity: 0.15; }
+        50% { transform: translate(30px, -25px); opacity: 0.7; }
+        100% { transform: translate(0, 0); opacity: 0.15; }
+      }
+
+      /* Glowing Core Reactor */
+      .core-ring {
+        fill: none;
+        stroke-linecap: round;
+        transform-origin: center;
+      }
+      .core-ring-1 {
+        stroke: #00F0FF;
+        stroke-width: 2;
+        stroke-dasharray: 180 60;
+        animation: rotateCore 12s infinite linear;
+        opacity: 0.6;
+      }
+      .core-ring-2 {
+        stroke: #A855F7;
+        stroke-width: 1.5;
+        stroke-dasharray: 100 40 80 40;
+        animation: rotateCore 18s infinite linear reverse;
+        opacity: 0.5;
+      }
+      .core-ring-3 {
+        stroke: #F59E0B;
+        stroke-width: 1;
+        stroke-dasharray: 40 20;
+        animation: rotateCore 25s infinite linear;
+        opacity: 0.4;
+      }
+
+      @keyframes rotateCore {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      /* Radar Scan Line */
+      .scanline {
+        stroke: #00F0FF;
+        stroke-width: 2;
+        opacity: 0.35;
+        animation: scanAnim 4s infinite linear;
+      }
+      @keyframes scanAnim {
+        0% { transform: translateY(-160px); opacity: 0; }
+        15% { opacity: 0.6; }
+        85% { opacity: 0.6; }
+        100% { transform: translateY(160px); opacity: 0; }
+      }
+
+      /* Neural Nodes */
+      .neural-node {
+        fill: #00F0FF;
+        animation: nodePulse 3s infinite alternate;
+      }
+      .neural-node:nth-child(2n) { fill: #A855F7; animation-delay: 1s; }
+      .neural-node:nth-child(3n) { fill: #F59E0B; animation-delay: 2s; }
+
+      @keyframes nodePulse {
+        0% { r: 3px; opacity: 0.3; filter: drop-shadow(0 0 2px currentColor); }
+        100% { r: 6px; opacity: 0.9; filter: drop-shadow(0 0 8px currentColor); }
+      }
+
+      .neural-link {
+        stroke: #A855F7;
+        stroke-width: 1;
+        opacity: 0.2;
+        stroke-dasharray: 4 4;
+        animation: linkFlow 6s infinite linear;
+      }
+      @keyframes linkFlow {
+        to { stroke-dashoffset: -32; }
+      }
+
+      /* Typography */
+      .main-title {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 56px;
+        font-weight: 900;
+        letter-spacing: 16px;
+        fill: #FFFFFF;
+        text-anchor: middle;
+      }
+      .main-title-glow {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 56px;
+        font-weight: 900;
+        letter-spacing: 16px;
+        fill: none;
+        stroke: #00F0FF;
+        stroke-width: 4;
+        opacity: 0.4;
+        filter: blur(8px);
+        text-anchor: middle;
+      }
+      .subtitle {
+        font-family: 'Fira Code', monospace;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        fill: #94A3B8;
+        text-anchor: middle;
+      }
+      .tagline-box {
+        fill: #0B0F19;
+        stroke: #1E293B;
+        stroke-width: 1.5;
+        rx: 8;
+      }
+      .tagline-text {
+        font-family: 'Fira Code', monospace;
+        font-size: 13px;
+        font-weight: 600;
+        fill: #38BDF8;
+        text-anchor: middle;
+      }
+
+      /* Cyber Badges */
+      .badge-text {
+        font-family: 'Fira Code', monospace;
+        font-size: 11px;
+        font-weight: 700;
+        fill: #00F0FF;
+      }
+
+      .glow-border {
+        stroke: url(#border-grad);
+        stroke-width: 1.5;
+        fill: none;
+      }
+    </style>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="50%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="33%" stop-color="#A855F7" />
+      <stop offset="66%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#F43F5E" />
+    </linearGradient>
+
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.15" />
+      <stop offset="50%" stop-color="#A855F7" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Base Dark Background -->
+  <rect width="1200" height="420" rx="12" fill="url(#bg-grad)" />
+  <rect width="1200" height="420" rx="12" fill="url(#center-glow)" />
+
+  <!-- Outer Tech Frame -->
+  <rect x="12" y="12" width="1176" height="396" rx="8" class="glow-border" opacity="0.4" />
+
+  <!-- Corner Tech Markers -->
+  <path d="M 24 40 L 24 24 L 40 24" fill="none" stroke="#00F0FF" stroke-width="2.5" />
+  <path d="M 1176 40 L 1176 24 L 1160 24" fill="none" stroke="#00F0FF" stroke-width="2.5" />
+  <path d="M 24 380 L 24 396 L 40 396" fill="none" stroke="#00F0FF" stroke-width="2.5" />
+  <path d="M 1176 380 L 1176 396 L 1160 396" fill="none" stroke="#00F0FF" stroke-width="2.5" />
+
+  <!-- Background Particle Stars -->
+  <g>
+    <circle cx="100" cy="80" r="1.5" fill="#38BDF8" class="bg-particle" />
+    <circle cx="250" cy="140" r="2" fill="#A855F7" class="bg-particle" />
+    <circle cx="400" cy="60" r="1" fill="#F59E0B" class="bg-particle" />
+    <circle cx="800" cy="70" r="2" fill="#00F0FF" class="bg-particle" />
+    <circle cx="980" cy="130" r="1.5" fill="#F43F5E" class="bg-particle" />
+    <circle cx="1100" cy="90" r="2" fill="#38BDF8" class="bg-particle" />
+    <circle cx="150" cy="320" r="2" fill="#F59E0B" class="bg-particle" />
+    <circle cx="320" cy="360" r="1" fill="#00F0FF" class="bg-particle" />
+    <circle cx="880" cy="340" r="1.5" fill="#A855F7" class="bg-particle" />
+    <circle cx="1050" cy="310" r="2" fill="#38BDF8" class="bg-particle" />
+  </g>
+
+  <!-- Left Side: Interactive HUD Core Reactor (x=160, y=210) -->
+  <g transform="translate(160, 210)">
+    <circle cx="0" cy="0" r="80" class="core-ring core-ring-1" />
+    <circle cx="0" cy="0" r="65" class="core-ring core-ring-2" />
+    <circle cx="0" cy="0" r="50" class="core-ring core-ring-3" />
+    
+    <!-- Target Reticle Lines -->
+    <line x1="-90" y1="0" x2="-65" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" />
+    <line x1="65" y1="0" x2="90" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" />
+    <line x1="0" y1="-90" x2="0" y2="-65" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" />
+    <line x1="0" y1="65" x2="0" y2="90" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" />
+    
+    <line x1="-100" y1="0" x2="100" y2="0" class="scanline" />
+
+    <!-- Core Center -->
+    <circle cx="0" cy="0" r="14" fill="#030712" stroke="#00F0FF" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="#00F0FF" opacity="0.9" />
+  </g>
+
+  <!-- Right Side: Neural Network Graph (x=1040, y=210) -->
+  <g transform="translate(1040, 210)">
+    <line x1="-70" y1="-50" x2="0" y2="-70" class="neural-link" />
+    <line x1="0" y1="-70" x2="70" y2="-50" class="neural-link" />
+    <line x1="-70" y1="-50" x2="-40" y2="10" class="neural-link" />
+    <line x1="70" y1="-50" x2="40" y2="10" class="neural-link" />
+    <line x1="-40" y1="10" x2="0" y2="-70" class="neural-link" />
+    <line x1="40" y1="10" x2="0" y2="-70" class="neural-link" />
+    <line x1="-40" y1="10" x2="0" y2="70" class="neural-link" />
+    <line x1="40" y1="10" x2="0" y2="70" class="neural-link" />
+    <line x1="-70" y1="50" x2="0" y2="70" class="neural-link" />
+    <line x1="70" y1="50" x2="0" y2="70" class="neural-link" />
+    <line x1="-70" y1="50" x2="-40" y2="10" class="neural-link" />
+    <line x1="70" y1="50" x2="40" y2="10" class="neural-link" />
+
+    <circle cx="-70" cy="-50" r="4" class="neural-node" />
+    <circle cx="0" cy="-70" r="5" class="neural-node" />
+    <circle cx="70" cy="-50" r="4" class="neural-node" />
+    <circle cx="-40" cy="10" r="5" class="neural-node" />
+    <circle cx="40" cy="10" r="5" class="neural-node" />
+    <circle cx="-70" cy="50" r="4" class="neural-node" />
+    <circle cx="0" cy="70" r="5" class="neural-node" />
+    <circle cx="70" cy="50" r="4" class="neural-node" />
+  </g>
+
+  <!-- Center Main Branding & Typography (x=600) -->
+  <g transform="translate(600, 160)">
+    <!-- Top System Status Pill -->
+    <rect x="-140" y="-85" width="280" height="28" rx="14" fill="#0B0F19" stroke="#1E293B" stroke-width="1.5" />
+    <circle cx="-115" cy="-71" r="4" fill="#10B981">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="-98" y="-66" class="badge-text" fill="#10B981">SYS.ONLINE // AGENT_SWARM_READY</text>
+
+    <!-- Main Name Title -->
+    <text y="-5" class="main-title-glow">SHANNU018</text>
+    <text y="-5" class="main-title">SHANNU018</text>
+
+    <!-- Subtitle -->
+    <text y="36" class="subtitle">
+      <tspan fill="#00F0FF">AUTONOMOUS AI</tspan>
+      <tspan fill="#64748B">  ///  </tspan>
+      <tspan fill="#A855F7">DISTRIBUTED SYSTEMS</tspan>
+      <tspan fill="#64748B">  ///  </tspan>
+      <tspan fill="#F59E0B">FULL-STACK ARCHITECT</tspan>
+    </text>
+
+    <!-- Tagline Box -->
+    <g transform="translate(0, 70)">
+      <rect x="-260" y="0" width="520" height="38" rx="8" class="tagline-box" />
+      <text x="0" y="24" class="tagline-text">PERCEPTION &#8594; REASONING &#8594; EXECUTION &#8594; ORCHESTRATION</text>
+    </g>
+  </g>
+
+  <!-- Bottom Gradient Animated Divider Line -->
+  <rect x="24" y="406" width="1152" height="3" rx="1.5" fill="url(#border-grad)" />
+</svg>
